@@ -1,48 +1,32 @@
 {
-  "name": "frontend-assignement",
+  "name": "frontend-assignment",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.5.0",
+  "type": "module",
+  "engines": {
+    "node": "20",
+    "npm": "This project uses PNPM instead of NPM. Please run `corepack enable` to install it."
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
-    "moment": "^2.29.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "json-server": "^0.16.3"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "json-server": "^0.17.4",
+    "moment": "^2.30.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vitest": "^1.6.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "server": "json-server -p 3001 --fks _id --snapshots ./server/dbs  -d 200 --routes ./server/routes.json --read-only --watch server/generator.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "server": "json-server -p 3001 -d 200 --routes ./server/routes.json --read-only --watch server/generator.cjs"
   }
 }
