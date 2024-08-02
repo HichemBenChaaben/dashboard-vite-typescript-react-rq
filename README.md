@@ -27,3 +27,7 @@ Once the API running, you'll be able to retrieve the assignment data set in orde
 of the front-end.
 
 You can read more about [available routes for the API here](./server/ROUTES.md)
+
+### `pnpm run check:format`
+
+Runs `prettier` to check if code formatted accordingly.

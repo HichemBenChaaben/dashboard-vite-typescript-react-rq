@@ -223,14 +223,14 @@ module.exports = () => {
       label: "Total margin",
       value: monthRevenues.reduce(
         (sum, monthValue) => sum + monthValue.total_margin,
-        0
+        0,
       ),
     },
     {
       label: "Total revenues",
       value: monthRevenues.reduce(
         (sum, monthValue) => sum + monthValue.total_revenue,
-        0
+        0,
       ),
     },
   ];
