@@ -45,7 +45,7 @@ Feel free to add and implement anything you think would improve the dashboard. F
 
 ## Format
 
-Submit your assignment as a zip file containing all the source code of the project, or provide a link to the Git repository with a source code.
+Submit your assignment as a zip file containing all the source code of the project (excluding `node_modules`) and a `.git` folder (your archive should contain git project with a commit history).
 
 ## What we will evaluate
 
