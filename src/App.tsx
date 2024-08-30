@@ -1,10 +1,11 @@
-import reactLogo from "./assets/react.svg";
+import Dashboard from "./pages/Dashboard";
+import NetworkStatus from "@/components/networkStatus/NetworkStatus";
 
 function App() {
   return (
-    <div>
-      <p>Hello world!</p>
-      <img src={reactLogo} className="logo react" alt="React logo" />
+    <div className="container">
+      <Dashboard />
+      <NetworkStatus />
     </div>
   );
 }
