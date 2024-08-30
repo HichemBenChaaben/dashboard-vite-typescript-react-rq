@@ -9,8 +9,8 @@ import BestCustomersTable from "@/components/tables/BestCustomersTable";
 import LatestInvoicesTable from "@/components/tables/LatestInvoicesTable";
 import TitleLoader from "../loadingIndicator/TitleLoader";
 import Title from "@/components/title/Title";
-import { formatCurrency } from "@/utils/helpers";
 import { aggBestCustomers, aggInvoices } from "./utils";
+import AggregateInfo from "@/components/tables/AggregateInfo";
 
 interface Props {
   valueType: ValueType;
@@ -49,20 +49,10 @@ const DataTables: FC<Props> = ({
               </Title>
               <small className="text-gray-400">List of best customers</small>
             </div>
-            <div className="items-center justify-center hidden lg:flex">
-              <div
-                className="p-2 mb-2 text-sm text-blue-800 rounded-md bg-blue-50 dark:bg-gray-800 dark:text-blue-400 border border-solid border-1 border-blue-100"
-                role="alert"
-              >
-                <span className="font-medium mr-4 capitalize">
-                  <span className="bg-white text-white h-[24px] w-[24px] inline-flex items-center justify-center p-2 mr-2 rounded-full">
-                    <i className="text-blue-400 fa fa-info text-sm"></i>
-                  </span>
-                  total revenue aggregate
-                </span>
-                <strong>{formatCurrency(bestCustomersAggregate)}</strong>
-              </div>
-            </div>
+            <AggregateInfo
+              title="total revenue aggregate"
+              aggregate={bestCustomersAggregate}
+            />
           </div>
         )}
         {isBestCustomersLoading && !bestCustomers && <TitleLoader />}
@@ -86,20 +76,10 @@ const DataTables: FC<Props> = ({
                 List of the latest invoices
               </small>
             </div>
-            <div className="items-center justify-center hidden lg:flex">
-              <div
-                className="p-2 mb-2 text-sm text-blue-800 rounded-md bg-blue-50 dark:bg-gray-800 dark:text-blue-400 border border-solid border-1 border-blue-100"
-                role="alert"
-              >
-                <span className="font-medium mr-4 capitalize">
-                  <span className="bg-white text-white h-[24px] w-[24px] inline-flex items-center justify-center p-2 mr-2 rounded-full">
-                    <i className="text-blue-400 fa fa-info text-sm"></i>
-                  </span>
-                  total revenue aggregate
-                </span>
-                <strong>{formatCurrency(invoicesAggregate)}</strong>
-              </div>
-            </div>
+            <AggregateInfo
+              title="invoices aggregate"
+              aggregate={invoicesAggregate}
+            />
           </div>
         )}
         {isInvoiceQueryLoading && <TitleLoader />}
