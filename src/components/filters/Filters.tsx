@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserFacetsContext } from "@/context/Facets";
+import { UserFacetsContext } from "@/context/Facets.context";
 import ToggleGroup from "@/components/toggleGroup/ToggleGroup";
 import Tag from "@/components/tag/Tag";
 

@@ -5,7 +5,7 @@ import { formatCurrency, formatDate } from "@/utils/helpers";
 import FlagDisplay from "@/components/flag/FlagDisplay";
 import Modal from "@/components/modal/Modal";
 import InvoiceLines from "@/components/tables/InvoiceLines";
-import { useModal } from "@/context/Modal";
+import { useModal } from "@/context/Modal.context";
 
 interface Props {
   data: Maybe<InvoicesTransformed[]>;

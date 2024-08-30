@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import queryClient from "@/api/queryClientInstance";
-import UseFacetsContextProvider from "@/context/Facets";
-import { ModalProvider } from "@/context/Modal";
+import UseFacetsContextProvider from "@/context/Facets.context";
+import { ModalProvider } from "@/context/Modal.context";
 import App from "./App";
 
 import "./index.css";

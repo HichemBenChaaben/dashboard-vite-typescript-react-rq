@@ -14,6 +14,7 @@ interface BarChartOptions {
       renderer: (param: Object) => { content: string };
     };
   }[];
+  axes: any[];
 }
 
 type MarginOrRevenueKeys = "total_margin" | "total_revenue";
@@ -33,6 +34,18 @@ const getCustomChartOptions = (
       text: `${title} by ${valueType}`,
     },
     data,
+    axes: [
+      {
+        type: "category",
+        position: "bottom",
+      },
+      {
+        type: "number",
+        label: {
+          formatter: ({ value }: { value: number }) => formatCurrency(value),
+        },
+      },
+    ],
     series: [
       {
         type: "bar",

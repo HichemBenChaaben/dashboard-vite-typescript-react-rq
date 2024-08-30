@@ -5,11 +5,11 @@ import {
   useBestCustomersQuery,
   useBestProductCategoriesQuery,
 } from "@/api/queries";
-import { UserFacetsContext } from "@/context/Facets";
+import { UserFacetsContext } from "@/context/Facets.context";
 
 export const useDashboardData = (invoiceId?: number) => {
   const { period, valueType } = useContext(UserFacetsContext);
-  
+
   const { data: revenues, isLoading: isRevenuesLoading } =
     useRevenuesQuery(period);
   const { data: invoices, isLoading: isInvoiceQueryLoading } =

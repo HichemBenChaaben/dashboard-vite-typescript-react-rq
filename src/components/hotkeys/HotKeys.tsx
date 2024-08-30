@@ -1,5 +1,5 @@
 import { useContext, useState, useCallback } from "react";
-import { UserFacetsContext } from "@/context/Facets";
+import { UserFacetsContext } from "@/context/Facets.context";
 import SnackBar from "@/components/snackbar/SnackBar";
 import { hotKeysMap } from "@/const";
 import useHotkey from "@/hooks/useHotKey";

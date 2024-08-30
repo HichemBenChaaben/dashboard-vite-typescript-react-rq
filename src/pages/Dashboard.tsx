@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserFacetsContext } from "@/context/Facets";
+import { UserFacetsContext } from "@/context/Facets.context";
 import { useDashboardData } from "@/hooks/useDashboardData";
 import BestProducts from "@/components/charts/barChart/BestProducts/BestProducts.chart";
 import CumulativeRevenue from "@/components/charts/lineChart/CumulativeRevenue/CumulativeRevenue.chart";

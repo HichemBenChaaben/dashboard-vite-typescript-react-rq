@@ -27,6 +27,18 @@ const getCustomChartOptions = (
       },
     },
   ],
+  axes: [
+    {
+      type: "category",
+      position: "bottom",
+    },
+    {
+      type: "number",
+      label: {
+        formatter: ({ value }: { value: number }) => formatCurrency(value),
+      },
+    },
+  ],
 });
 
 export default getCustomChartOptions;

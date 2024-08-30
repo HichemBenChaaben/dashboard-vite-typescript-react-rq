@@ -1,6 +1,6 @@
 import { type ValueType, type Period } from "@/types";
 import { useEffect } from "react";
-import { useModal } from "@/context/Modal";
+import { useModal } from "@/context/Modal.context";
 
 /**
  * trigger a callback on a combination of keys
