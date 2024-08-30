@@ -2,13 +2,13 @@ import HotKeys from "./components/hotkeys/HotKeys";
 import SystemBar from "./components/systemBar/SystemBar";
 import useNetWorkStatus from "./hooks/useNetworkStatus";
 import Dashboard from "./pages/Dashboard";
-import Header from "@/components/filters/Filters";
+import AppBar from "@/components/appBar/AppBar";
 
 function App() {
   const [isOnline] = useNetWorkStatus();
   return (
     <div className="dashboard-container">
-      <Header />
+      <AppBar />
       <Dashboard />
       <HotKeys />
       <SystemBar isShown={!isOnline}>

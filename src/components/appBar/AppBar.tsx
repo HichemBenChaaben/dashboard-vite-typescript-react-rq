@@ -3,7 +3,7 @@ import { UserFacetsContext } from "@/context/Facets.context";
 import ToggleGroup from "@/components/toggleGroup/ToggleGroup";
 import Tag from "@/components/tag/Tag";
 
-const Header = () => {
+const AppBar = () => {
   const { period, setPeriod, valueType, setValueType } =
     useContext(UserFacetsContext);
 
@@ -41,7 +41,7 @@ const Header = () => {
   ];
   return (
     <div className="flex mb-2 justify-between p-4 lg:px-6 bg-white sticky top-0 z-10 rounded overflow-hidden border border-solid border-gray-300 w-full">
-      <div className="flex flex-col">
+      <div className="hidden md:flex md:flex-col">
         <h2 className="text-xl">Dashboard</h2>
         <small className="text-gray-400 capitalize">tables, ivoices</small>
       </div>
@@ -58,4 +58,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppBar;
