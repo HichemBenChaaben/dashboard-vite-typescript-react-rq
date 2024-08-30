@@ -69,8 +69,8 @@ export const createHotkeysConfig = (
   setValueType: (value: ValueType) => void,
   setPeriod: (value: Period) => void
 ): HotkeyConfig[] =>
-  hotKeysMap.map((hk) => ({
-    ...hk,
+  hotKeysMap.map((hotkey) => ({
+    ...hotkey,
     action: (valueType: ValueType, period: Period) => {
       const toggleMap = {
         monthly: "weekly",
@@ -79,9 +79,9 @@ export const createHotkeysConfig = (
         margin: "revenue",
       };
 
-      if (hk.value === "weekly") {
+      if (hotkey.value === "weekly") {
         setPeriod(toggleMap[period] as Period);
-      } else if (hk.value === "margin") {
+      } else if (hotkey.value === "margin") {
         setValueType(toggleMap[valueType] as ValueType);
       }
     },
