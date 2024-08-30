@@ -5,7 +5,7 @@ import {
   type InvoicesTransformed,
 } from "@/types";
 import { formatCurrency } from "@/utils/helpers";
-import FlagDisplay from "@/components/flag/RegionToFlag";
+import FlagDisplay from "@/components/flag/FlagDisplay";
 
 interface InvoiceLinesProps {
   invoice: Maybe<InvoicesTransformed>;

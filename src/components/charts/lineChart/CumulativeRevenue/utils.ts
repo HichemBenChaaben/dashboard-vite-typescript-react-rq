@@ -22,7 +22,7 @@ const calculateSortedCumulativeRevenue = (
   return cumulativeData;
 };
 
-export default function calculateCumulativeSum(
+function calculateCumulativeSum(
   data: Maybe<Revenue[]>,
   valueType: ValueType
 ): CumulativeSum[] {
@@ -62,3 +62,5 @@ export default function calculateCumulativeSum(
   }
   return calculateSortedCumulativeRevenue(marginOfRevenueData) || [];
 }
+
+export default calculateCumulativeSum;

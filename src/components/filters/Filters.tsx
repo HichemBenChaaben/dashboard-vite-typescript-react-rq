@@ -7,7 +7,7 @@ const Filters = () => {
   const { period, setPeriod, valueType, setValueType } =
     useContext(UserFacetsContext);
 
-  const toggleMarginRevenueButtonGroup = [
+  const buttonsGroupConfig = [
     {
       value: "margin",
       icon: "fa-chart-line",
@@ -47,10 +47,7 @@ const Filters = () => {
       </div>
 
       <div className="flex gap-2">
-        <ToggleGroup
-          buttons={toggleMarginRevenueButtonGroup}
-          type={valueType}
-        />
+        <ToggleGroup buttons={buttonsGroupConfig} type={valueType} />
         <ToggleGroup buttons={togglePeriodButtonGroup} type={valueType} />
       </div>
     </div>

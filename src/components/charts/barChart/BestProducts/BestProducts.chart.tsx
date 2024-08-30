@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { AgCharts, type AgChartProps } from "ag-charts-react";
 import { type Maybe, type ValueType, type BestProductCategory } from "@/types";
-import getCustomChartOptions from "./barChartUtils";
+import chartOptions from "./chartOptions";
 
 interface Props {
   data: Maybe<BestProductCategory[]>;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const BarChart: FC<Props> = ({ data = [], valueType, title }) => {
-  const options = getCustomChartOptions(
+  const options = chartOptions(
     data,
     valueType,
     title

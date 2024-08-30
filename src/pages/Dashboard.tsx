@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { UserFacetsContext } from "@/context/Facets";
 import { useDashboardData } from "@/hooks/useDashboardData";
-import BarChart from "@/components/charts/BarChart";
-import LineChart from "@/components/charts/LineChart";
+import BestProducts from "@/components/charts/barChart/BestProducts/BestProducts.chart";
+import CumulativeRevenue from "@/components/charts/lineChart/CumulativeRevenue/CumulativeRevenue.chart";
 import Filters from "@/components/filters/Filters";
 import DataTables from "@/components/tables/DataTables";
 import VerticalBarChartLoader from "@/components/loadingIndicator/VerticalBarChartLoader";
 import useHotkey from "@/hooks/useHotKey";
 import { createHotkeysConfig } from "@/utils/helpers";
 import HotKeys from "@/components/hotkeys";
-import Modal from "@/components/modal/Modal";
 
 const Dashboard = () => {
   const { valueType, setValueType, period, setPeriod } =
@@ -48,7 +47,7 @@ const Dashboard = () => {
         <div className="card w-full md:w-1/2">
           {isBestCategoriesLoading && <VerticalBarChartLoader />}
           {bestProductCategories && !isBestCategoriesLoading && (
-            <BarChart
+            <BestProducts
               title="Best products"
               valueType={valueType}
               data={bestProductCategories}
@@ -56,7 +55,7 @@ const Dashboard = () => {
           )}
         </div>
         <div className="card w-full md:w-1/2">
-          <LineChart
+          <CumulativeRevenue
             revenues={revenues}
             loading={isRevenuesLoading}
             valueType={valueType}

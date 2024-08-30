@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import FlagDisplay from "@/components/flag/RegionToFlag";
+import FlagDisplay from "@/components/flag/FlagDisplay";
 
 describe("FlagDisplay component", () => {
   it("should render a flag with the correct region and country code", () => {

@@ -2,7 +2,7 @@ import { type FC, useState } from "react";
 import LoadingTable from "./LoadingTable";
 import { type ValueType, type Maybe, type InvoicesTransformed } from "@/types";
 import { formatCurrency, formatDate } from "@/utils/helpers";
-import FlagDisplay from "@/components/flag/RegionToFlag";
+import FlagDisplay from "@/components/flag/FlagDisplay";
 import Modal from "@/components/modal/Modal";
 import InvoiceLines from "@/components/tables/InvoiceLines";
 
