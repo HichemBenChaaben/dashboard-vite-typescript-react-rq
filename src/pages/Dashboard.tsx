@@ -8,7 +8,7 @@ import DataTables from "@/components/tables/DataTables";
 import VerticalBarChartLoader from "@/components/loadingIndicator/VerticalBarChartLoader";
 import useHotkey from "@/hooks/useHotKey";
 import { createHotkeysConfig } from "@/utils/helpers";
-import HotKeys from "@/components/hotkeys";
+import HotKeys from "@/components/hotkeys/HotKeys";
 
 const Dashboard = () => {
   const { valueType, setValueType, period, setPeriod } =
