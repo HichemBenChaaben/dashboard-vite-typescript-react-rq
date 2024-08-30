@@ -1,4 +1,4 @@
-# Frontend home assignment
+# Responsive Dashboard with data and filters
 
 this project is a dashboard application using the following tech stack;
 to run the project 
@@ -9,6 +9,7 @@ to run the project
 - tanstack react query +
 - ag-charts-react +
 - react-flagkit +
+- font-awesome icons +
 - typescript
 - build using vite
 
@@ -16,9 +17,10 @@ to run the project
 
 ## Project architecture
 
-components, react query and context api
-react-query manages a lot of server state, the remaining application state
-to manage is limited to filters
+this project is using components, react query and context api.
+react-query manages the server state,
+the small remaining portion of state to manage is filters
+the filters are managed by context api and persistance in the localstorage.
 
 ### Features
 
@@ -29,7 +31,7 @@ to manage is limited to filters
 - line chart
 - 100% type safe
 - re-usable ui components (atoms)
-- visual indicators
+- visual indicators (loaders)
 - modal with backdrop using react portal
 - data tables with sticky table headers
 - offline indicator
