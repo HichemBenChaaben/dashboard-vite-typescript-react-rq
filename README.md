@@ -1,4 +1,4 @@
-# Responsive Dashboard with data and filters
+# Responsive dashboard with data display and hotkeys filtering
 
 this project is a dashboard application using the following tech stack;
 to run the project 
