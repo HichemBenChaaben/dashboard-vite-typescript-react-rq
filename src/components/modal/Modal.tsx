@@ -1,4 +1,4 @@
-import React, { type FC } from "react";
+import React, { type FC, useEffect, useCallback } from "react";
 import Portal from "./Portal";
 import BackDrop from "./BackDrop";
 
@@ -11,9 +11,28 @@ const Modal: FC<{
   if (!isOpen) {
     return null;
   }
+  const handleEscapeKey = useCallback(
+    (event: KeyboardEvent) => {
+      event.preventDefault();
+      if (event.key === "Escape") {
+        onClose();
+      }
+    },
+    [onClose]
+  );
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isOpen, handleEscapeKey]);
+
   return (
     <Portal>
-      <BackDrop isShown={isOpen}>
+      <BackDrop isShown={isOpen} onClick={onClose}>
         <div
           tabIndex={-1}
           aria-hidden="true"
