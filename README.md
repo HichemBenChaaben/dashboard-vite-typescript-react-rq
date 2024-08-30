@@ -46,7 +46,7 @@ the filters are managed by context api and persistance in the localstorage.
 - contex (context api providers)
 - api (queries and singleton instances)
   - queries
-- cosnt (project const)
+- const (project const)
 - pages
 - utils (shared utilities)
 
