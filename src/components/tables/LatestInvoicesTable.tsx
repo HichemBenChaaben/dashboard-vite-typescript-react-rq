@@ -1,5 +1,5 @@
 import { type FC, useState } from "react";
-import LoadingTable from "./LoadingTable";
+import LoadingTable from "../loadingIndicator/LoadingTable";
 import { type ValueType, type Maybe, type InvoicesTransformed } from "@/types";
 import { formatCurrency, formatDate } from "@/utils/helpers";
 import FlagDisplay from "@/components/flag/FlagDisplay";

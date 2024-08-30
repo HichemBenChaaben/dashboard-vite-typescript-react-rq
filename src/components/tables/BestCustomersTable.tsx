@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import LoadingTable from "./LoadingTable";
+import LoadingTable from "@/components/loadingIndicator/LoadingTable";
 import { type Maybe, type BestCustomer, ValueType } from "@/types";
 import { formatCurrency } from "@/utils/helpers";
 
