@@ -6,17 +6,14 @@ import {
 } from "@/types";
 import { formatCurrency } from "@/utils/helpers";
 import FlagDisplay from "@/components/flag/FlagDisplay";
+import Alert from "@/components/alert/Alert";
 
 interface InvoiceLinesProps {
   invoice: Maybe<InvoicesTransformed>;
 }
 const InvoiceLines: FC<InvoiceLinesProps> = ({ invoice }) => {
   if (!invoice) {
-    return (
-      <div className="flex justify-center align-center">
-        no invoice to display
-      </div>
-    );
+    return <Alert>no invoice to display</Alert>;
   }
   return (
     <div className="max-h-[400px] overflow-scroll">
