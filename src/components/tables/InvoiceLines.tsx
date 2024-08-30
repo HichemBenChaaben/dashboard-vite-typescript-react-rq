@@ -20,18 +20,28 @@ const InvoiceLines: FC<InvoiceLinesProps> = ({ invoice }) => {
   }
   return (
     <div className="max-h-[400px] overflow-scroll">
-      <div className="sticky top-[-10px] flex flex-row gap-2 p-2 bg-gray-50 mb-2 justify-between">
+      <div className="sticky top-[-10px] flex flex-row gap-2 p-2 bg-gray-50 mb-2 justify-between rounded-sm">
         <div className="flex justify-center align-center gap-2">
-          <div className="flex justify-center align-center">
-            <FlagDisplay
-              region={invoice.region}
-              countryCode={invoice.countryCode}
-            />
+          <div className="flex flex-col">
+            <div className="font-semibold flex flex-row gap-2">
+              <FlagDisplay
+                region={invoice.region}
+                countryCode={invoice.countryCode}
+              />
+              {invoice.customer_name}
+            </div>
+            <div className="text-sm text-gray-400">
+              customer id #{invoice.customer_id}
+            </div>
           </div>
-          <div className="font-semibold">{invoice.customer_name}</div>
         </div>
-        <div className="font-semibold flex justify-end align-end text-blue-800">
-          {formatCurrency(invoice.total_invoice)}
+        <div className="flex flex-col text-blue-800">
+          <div className="flex justify-end items-end font-semibold text-lg">
+            {formatCurrency(invoice.total_invoice)}
+          </div>
+          <div className="text-sm text-gray-400">
+            total invoice lines aggregate
+          </div>
         </div>
       </div>
       <div className="border border-gray-300">
@@ -41,9 +51,9 @@ const InvoiceLines: FC<InvoiceLinesProps> = ({ invoice }) => {
               <th className="p-2">id</th>
               <th className="p-2">product name</th>
               <th className="p-2 text-right">quantity</th>
+              <th className="p-2 text-right">unit price</th>
               <th className="p-2 text-right">total line</th>
               <th className="p-2 text-right">total margin</th>
-              <th className="p-2 text-right">unit price</th>
             </tr>
           </thead>
           <tbody className="text-md text-gray-700">
@@ -59,13 +69,13 @@ const InvoiceLines: FC<InvoiceLinesProps> = ({ invoice }) => {
                   <td className="p-2">{line.product_name}</td>
                   <td className="p-2 text-center">{line.quantity}</td>
                   <td className="p-2 text-right">
+                    {formatCurrency(line.unit_price)}
+                  </td>
+                  <td className="p-2 text-right">
                     {formatCurrency(line.total_line)}
                   </td>
                   <td className="p-2 text-right">
                     {formatCurrency(line.total_margin)}
-                  </td>
-                  <td className="p-2 text-right">
-                    {formatCurrency(line.unit_price)}
                   </td>
                 </tr>
               );

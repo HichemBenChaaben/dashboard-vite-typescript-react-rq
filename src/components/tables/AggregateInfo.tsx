@@ -10,8 +10,8 @@ const AggregateInfo: FC<AggregateInfoProps> = ({ title, aggregate }) => {
   return (
     <Alert>
       <span className="font-medium mr-4 capitalize">
-        <span className="bg-white text-white h-[24px] w-[24px] inline-flex items-center justify-center p-2 mr-2 rounded-full">
-          <i className="text-blue-400 fa fa-info text-sm"></i>
+        <span className="text-xs bg-white text-white h-[22px] w-[22px] inline-flex items-center justify-center p-1 mr-2 rounded-full">
+          <i className="text-blue-400 fa fa-info text-xs"></i>
         </span>
         {title}
       </span>

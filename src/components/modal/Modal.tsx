@@ -32,9 +32,7 @@ const Modal: FC<{
 
   return (
     <Portal>
-      <BackDrop isShown={isOpen} onClick={onClose}>
-        ..
-      </BackDrop>
+      <BackDrop isShown={isOpen} onClick={onClose} />
       <div
         tabIndex={-1}
         aria-hidden="true"
@@ -48,11 +46,10 @@ const Modal: FC<{
               </h3>
               <button
                 type="button"
-                className="bg-gray-100 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                onClick={() => onClose()}
+                className="bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
               >
-                <span onClick={() => onClose()}>
-                  <span className="text-black text-lg fa fa-times" />
-                </span>
+                <span className="text-black text-lg fa fa-times" />
               </button>
             </div>
             <div className="p-4 md:p-5 space-y-4">{children}</div>
