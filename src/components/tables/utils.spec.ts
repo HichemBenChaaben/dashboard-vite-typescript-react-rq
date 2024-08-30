@@ -36,8 +36,3 @@ describe("aggInvoices utility function", () => {
     expect(result).toBe(0);
   });
 });
-
-
-describe('aggBestCustomers utility function', () => {
-
-})

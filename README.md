@@ -15,11 +15,12 @@ to run the project
 
 + added to the original template
 
-
 ### Features
 
 - responsive design
 - state management using context api and react query
+- quick filters
+- custom hotkeys map allowing quick filtering
 - aggregators for revenue sum and invoice sum
 - bar chart
 - line chart
@@ -29,14 +30,16 @@ to run the project
 - modal with backdrop using react portal
 - data tables with sticky table headers
 - offline indicator
-- custom hotkeys map allowing quick filtering
 - loading indicators or ghost placeholder loaders
 - local storage persistance for application state
 - currency and time formatting
 
 ## Preview
 
-!["Project preview"](preview/dashboard.png)
+!["Project preview"](preview/dashboard-preview-1.png)
+!["Project preview"](preview/dashboard-preview-2.png)
+!["Project preview"](preview/dashboard-preview-3.png)
+!["Project preview"](preview/dashboard-preview-4.png)
 
 ## Project architecture
 
@@ -44,8 +47,6 @@ this project is using components, react query and context api.
 react-query manages the server state,
 the small remaining portion of state to manage is filters
 the filters are managed by context api and persistance in the localstorage.
-
-
 
 ### Folder structure
 - componenent (ui components)
@@ -57,7 +58,7 @@ the filters are managed by context api and persistance in the localstorage.
 - pages
 - utils (shared utilities)
 
-### terminologies and file namings
+### Terminologies and file namings
 to make sure files are easier to find, navigate and import
 certain files have custom name extensions
 
