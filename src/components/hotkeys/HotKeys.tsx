@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useCallback } from "react";
 import { UserFacetsContext } from "@/context/Facets";
 import SnackBar from "@/components/snackbar/SnackBar";
 import { hotKeysMap } from "@/const";
@@ -6,17 +6,28 @@ import useHotkey from "@/hooks/useHotKey";
 import { createHotkeysConfig } from "./config";
 
 const HotKeys = () => {
+  const [visible, setVisible] = useState(true);
   const { valueType, setValueType, period, setPeriod } =
     useContext(UserFacetsContext);
 
-  const hotKeys = createHotkeysConfig(setValueType, setPeriod);
+  const hotKeys = useCallback(
+    () => createHotkeysConfig(setValueType, setPeriod),
+    [setValueType, setPeriod]
+  )();
 
   hotKeys.forEach((hotkey) => {
     useHotkey(hotkey.keys, hotkey.action, valueType, period);
   });
 
+  const handleClose = useCallback(() => {
+    setVisible(false);
+  }, [setVisible]);
+
+  if (!visible) {
+    return null;
+  }
   return (
-    <SnackBar>
+    <SnackBar onClose={handleClose}>
       <div className="flex-1">
         <div className="text-sm font-medium">
           <span className="text-lg mr-2 fa fa-keyboard" />

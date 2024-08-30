@@ -5,7 +5,6 @@ import BestProducts from "@/components/charts/barChart/BestProducts/BestProducts
 import CumulativeRevenue from "@/components/charts/lineChart/CumulativeRevenue/CumulativeRevenue.chart";
 import DataTables from "@/components/tables/DataTables";
 import VerticalBarChartLoader from "@/components/loadingIndicator/VerticalBarChartLoader";
-import HotKeys from "@/components/hotkeys/HotKeys";
 
 const Dashboard = () => {
   const { valueType, period } = useContext(UserFacetsContext);
@@ -32,7 +31,7 @@ const Dashboard = () => {
           isInvoiceQueryLoading={isInvoiceQueryLoading}
         />
       </div>
-      <div className="flex flex-col md:flex-row min-h-[420px] gap-4">
+      <div className="flex flex-col md:flex-row min-h-[420px] lg:gap-4">
         <div className="card w-full md:w-1/2">
           {isBestCategoriesLoading && <VerticalBarChartLoader />}
           {bestProductCategories && !isBestCategoriesLoading && (
@@ -51,7 +50,6 @@ const Dashboard = () => {
             period={period}
           />
         </div>
-        <HotKeys />
       </div>
     </>
   );
