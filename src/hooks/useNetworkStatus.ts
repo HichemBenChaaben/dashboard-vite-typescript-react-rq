@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const NetworkStatus = () => {
+const useNetWorkStatus = () => {
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
 
   useEffect(() => {
@@ -16,13 +16,7 @@ const NetworkStatus = () => {
     };
   }, []);
 
-  return (
-    <div
-      className={`${isOnline && "hidden"} fixed bottom-0 w-full flex justify-center items-center bg-orange-300 z-50 right-0 left-0 p-4 shadow-lg text-white`}
-    >
-      {!isOnline && "You are offline"}
-    </div>
-  );
+  return [isOnline];
 };
 
-export default NetworkStatus;
+export default useNetWorkStatus;

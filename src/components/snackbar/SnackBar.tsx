@@ -5,7 +5,7 @@ interface SnackBarContentProps {
 }
 
 interface SnackBarIndicatorProps {
-  onClose: () => void;
+  onClose?: () => void;
   children: ReactNode;
   [key: string]: any;
 }
