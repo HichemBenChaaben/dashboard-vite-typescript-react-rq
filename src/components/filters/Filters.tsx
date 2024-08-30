@@ -3,7 +3,7 @@ import { UserFacetsContext } from "@/context/Facets.context";
 import ToggleGroup from "@/components/toggleGroup/ToggleGroup";
 import Tag from "@/components/tag/Tag";
 
-const Filters = () => {
+const Header = () => {
   const { period, setPeriod, valueType, setValueType } =
     useContext(UserFacetsContext);
 
@@ -40,7 +40,11 @@ const Filters = () => {
     },
   ];
   return (
-    <div className="flex mb-2 justify-between  p-4 bg-white sticky top-0 z-10 rounded overflow-hidden border border-solid border-gray-300 w-full">
+    <div className="flex mb-2 justify-between p-4 lg:px-6 bg-white sticky top-0 z-10 rounded overflow-hidden border border-solid border-gray-300 w-full">
+      <div className="flex flex-col">
+        <h2 className="text-xl">Dashboard</h2>
+        <small className="text-gray-400 capitalize">tables, ivoices</small>
+      </div>
       <div className="flex items-center font-semibold capitalize justify-center align-center align-center">
         <Tag>{valueType}</Tag>
         <Tag>{period}</Tag>
@@ -54,4 +58,4 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+export default Header;
