@@ -1,20 +1,7 @@
 import React, { type FC } from "react";
 import Portal from "./Portal";
+import BackDrop from "./BackDrop";
 
-const BackDrop = ({
-  isShown,
-  children,
-}: {
-  isShown: boolean;
-  children: React.ReactNode;
-}) => {
-  if (!isShown) {
-    return null;
-  }
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-20">{children}</div>
-  );
-};
 const Modal: FC<{
   title: string;
   isOpen: boolean;

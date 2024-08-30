@@ -8,7 +8,7 @@ const getCustomChartOptions = (
   valueType: ValueType
 ) => ({
   title: {
-    text: `Cumulative ${period} revenue`,
+    text: `Cumulative ${period} by ${valueType}`,
   },
   data: calculateCumulativeSum(revenues, valueType),
   series: [

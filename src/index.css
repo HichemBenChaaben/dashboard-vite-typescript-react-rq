@@ -2,25 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  @apply w-full mx-auto px-2;
-}
-
-select:not([size]) {
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3E%3C/svg%3E");
-  background-position: right 0.75rem center;
-  background-repeat: no-repeat;
-  background-size: 0.75em 0.75em;
-  padding-right: 2.5rem;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-}
-
-.card {
-  @apply p-4 md:p-6 mb-2 lg:mb-4 rounded overflow-hidden shadow-sm border border-solid border-gray-300 bg-white w-full min-h-[300px] md:min-h-[400px];
-}
-
 body {
   font-family:
     "Inter",
@@ -46,8 +27,21 @@ h3 {
   font-weight: 600;
 }
 
-/* p,
-span,
-td {
-  font-weight: 400;
-} */
+select:not([size]) {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 0.75em 0.75em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.container {
+  @apply w-full mx-auto px-2;
+}
+
+.card {
+  @apply p-4 md:p-6 mb-2 lg:mb-4 rounded overflow-hidden shadow-sm border border-solid border-gray-300 bg-white w-full min-h-[300px] md:min-h-[400px];
+}

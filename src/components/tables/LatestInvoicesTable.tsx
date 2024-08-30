@@ -5,6 +5,7 @@ import { formatCurrency, formatDate } from "@/utils/helpers";
 import FlagDisplay from "@/components/flag/FlagDisplay";
 import Modal from "@/components/modal/Modal";
 import InvoiceLines from "@/components/tables/InvoiceLines";
+import { useModal } from "@/context/Modal";
 
 interface Props {
   data: Maybe<InvoicesTransformed[]>;
@@ -20,11 +21,12 @@ const LatestInvoicesTable: FC<Props> = ({
   valueType,
 }) => {
   const [invoiceById, setInvoiceById] = useState<Maybe<InvoicesTransformed>>();
-  const [showModal, setShowModal] = useState<boolean>(false);
+  const { openModal, closeModal, isModalOpen } = useModal();
+
   const getInvoiceLines = (id: number) => {
     const invoiceById = data.find((item) => item.id === id);
     setInvoiceById(invoiceById);
-    setShowModal(true);
+    openModal();
   };
   const handleClickRow = (id: number) => {
     getInvoiceLines(id);
@@ -38,11 +40,11 @@ const LatestInvoicesTable: FC<Props> = ({
 
   return (
     <>
-      {showModal && (
+      {isModalOpen && (
         <Modal
           title={`Invoice id #${invoiceById?.id}`}
-          isOpen={showModal}
-          onClose={() => setShowModal(false)}
+          isOpen={isModalOpen}
+          onClose={() => closeModal()}
         >
           <InvoiceLines invoice={invoiceById} />
         </Modal>
@@ -50,6 +52,9 @@ const LatestInvoicesTable: FC<Props> = ({
       <table className="bg-white border border-gray-300 text-sm w-full">
         <thead className="sticky z-2 top-[-1px] border-t-1 border-gray-200 z-99 bg-white border-collapse py-2">
           <tr className="p-2 border-b text-left font-semibold capitalize">
+            <th scope="col" className="p-2">
+              id
+            </th>
             <th scope="col" className="p-2">
               name
             </th>
@@ -73,6 +78,7 @@ const LatestInvoicesTable: FC<Props> = ({
                 index % 2 === 0 ? "bg-white" : "bg-slate-100"
               } hover:bg-slate-200 cursor-pointer`}
             >
+              <td className="p-2">{item.customer_id}</td>
               <td className="p-2">{item.customer_name}</td>
               <td className="p-2 text-left">
                 <span className="flex justify-end">
