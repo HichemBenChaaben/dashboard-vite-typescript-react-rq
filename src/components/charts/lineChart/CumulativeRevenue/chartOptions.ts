@@ -7,6 +7,7 @@ const getCustomChartOptions = (
   period: Period,
   valueType: ValueType
 ) => ({
+  minHeight: 340,
   title: {
     text: `Cumulative ${period} by ${valueType}`,
   },

@@ -2,6 +2,7 @@ import { formatCurrency } from "@/utils/helpers";
 import { type ValueType, type BestProductCategory } from "@/types";
 
 interface BarChartOptions {
+  minHeight: number;
   title: {
     text: string;
   };
@@ -30,6 +31,7 @@ const getCustomChartOptions = (
   };
 
   return {
+    minHeight: 340,
     title: {
       text: `${title} by ${valueType}`,
     },
