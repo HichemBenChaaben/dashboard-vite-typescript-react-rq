@@ -5,19 +5,10 @@ import BestProducts from "@/components/charts/barChart/BestProducts/BestProducts
 import CumulativeRevenue from "@/components/charts/lineChart/CumulativeRevenue/CumulativeRevenue.chart";
 import DataTables from "@/components/tables/DataTables";
 import VerticalBarChartLoader from "@/components/loadingIndicator/VerticalBarChartLoader";
-import useHotkey from "@/hooks/useHotKey";
-import { createHotkeysConfig } from "@/utils/helpers";
 import HotKeys from "@/components/hotkeys/HotKeys";
 
 const Dashboard = () => {
-  const { valueType, setValueType, period, setPeriod } =
-    useContext(UserFacetsContext);
-
-  const hotKeys = createHotkeysConfig(setValueType, setPeriod);
-
-  hotKeys.forEach((hotkey) => {
-    useHotkey(hotkey.keys, hotkey.action, valueType, period);
-  });
+  const { valueType, period } = useContext(UserFacetsContext);
 
   const {
     isBestCategoriesLoading,
