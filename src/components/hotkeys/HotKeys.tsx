@@ -27,22 +27,24 @@ const HotKeys = () => {
     return null;
   }
   return (
-    <SnackBar onClose={handleClose}>
-      <div className="flex-1">
-        <div className="text-sm font-medium">
-          <span className="text-lg mr-2 fa fa-keyboard" />
-          <strong>😎 Hotkeys:</strong>
-          <div className="mt-2 space-y-1">
-            {hotKeysMap.map(({ description, keys }, index) => (
-              <div key={`hotkey-${index}`}>
-                <kbd className="bg-gray-700 p-1 rounded">{keys}</kbd>
-                {description}
-              </div>
-            ))}
+    <div className="hidden md:flex">
+      <SnackBar onClose={handleClose}>
+        <div className="flex-1 ">
+          <div className="text-sm font-medium">
+            <span className="text-lg mr-2 fa fa-keyboard" />
+            <strong>😎 Hotkeys:</strong>
+            <div className="mt-2 space-y-1">
+              {hotKeysMap.map(({ description, keys }, index) => (
+                <div key={`hotkey-${index}`}>
+                  <kbd className="bg-gray-700 p-1 rounded mr-2">{keys}</kbd>
+                  {description}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </SnackBar>
+      </SnackBar>
+    </div>
   );
 };
 
