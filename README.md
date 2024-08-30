@@ -37,7 +37,6 @@ to run the project
 ## Preview
 
 !["Project preview"](preview/dashboard-preview-1.png)
-!["Project preview"](preview/dashboard-preview-2.png)
 !["Project preview"](preview/dashboard-preview-3.png)
 !["Project preview"](preview/dashboard-preview-4.png)
 
