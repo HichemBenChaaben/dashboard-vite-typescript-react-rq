@@ -1,10 +1,67 @@
 # Frontend home assignment
 
-This template provides a minimal setup to get React working in Vite with HMR.
+this project is a dashboard application using the following tech stack;
+to run the project 
 
-## Requirements
+- react
+- typescript
+- tailwindcss +
+- tanstack react query +
+- ag-charts-react +
+- react-flagkit +
+- typescript
+- build using vite
 
-You can find requirements in the [requirements document](./REQUIREMENTS.md).
++ added to the original template
+
+## Project architecture
+
+components, react query and context api
+react-query manages a lot of server state, the remaining application state
+to manage is limited to filters
+
+### Features
+
+- responsive design
+- state management using context api and react query
+- aggregators for revenue sum and invoice sum
+- bar chart
+- line chart
+- 100% type safe
+- re-usable ui components (atoms)
+- visual indicators
+- modal with backdrop using react portal
+- data tables with sticky table headers
+- offline indicator
+- custom hotkeys map allowing quick filtering
+- loading indicators or ghost placeholder loaders
+- local storage persistance for application state
+- currency and time formatting
+
+### Folder structure
+- componenent (ui components)
+- hooks (shared hooks)
+- contex (context api providers)
+- api (queries and singleton instances)
+  - queries
+- cosnt (project const)
+- pages
+- utils (shared utilities)
+
+### terminologies and file namings
+to make sure files are easier to find, navigate and import
+certain files have custom name extensions
+
+*.query any query file
+*.chart any chart file
+*util.ts any file containing local module shared utility or common shared utility
+*.spect.ts test files colocalted with the .ts files
+
+- components are following pascal case
+- folders small case
+- utility files small case
+- test files same as the colocated file
+
 
 ## Available Scripts
 
@@ -14,9 +71,13 @@ In the project directory, you can run:
 
 ### `pnpm dev`
 
-Runs the app in the development mode.
+Runs the app in the development mode server and client side application using `concurrently`
 
 ### `pnpm test`
+
+Launches the test runner once
+
+### `pnpm test:watch`
 
 Launches the test runner in the interactive watch mode.
 
