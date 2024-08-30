@@ -3,7 +3,6 @@ import { UserFacetsContext } from "@/context/Facets";
 import { useDashboardData } from "@/hooks/useDashboardData";
 import BestProducts from "@/components/charts/barChart/BestProducts/BestProducts.chart";
 import CumulativeRevenue from "@/components/charts/lineChart/CumulativeRevenue/CumulativeRevenue.chart";
-import Filters from "@/components/filters/Filters";
 import DataTables from "@/components/tables/DataTables";
 import VerticalBarChartLoader from "@/components/loadingIndicator/VerticalBarChartLoader";
 import useHotkey from "@/hooks/useHotKey";
@@ -33,7 +32,6 @@ const Dashboard = () => {
 
   return (
     <>
-      <Filters />
       <div className="md:flex md:flex-row justify-between gap-4">
         <DataTables
           valueType={valueType}
