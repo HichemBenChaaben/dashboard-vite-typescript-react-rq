@@ -23,7 +23,7 @@ const HotKeys = () => {
           <strong>😎 Hotkeys:</strong>
           <div className="mt-2 space-y-1">
             {hotKeysMap.map(({ description, keys }, index) => (
-              <div id={`hotkey-${index}`}>
+              <div key={`hotkey-${index}`}>
                 <kbd className="bg-gray-700 p-1 rounded">{keys}</kbd>
                 {description}
               </div>
