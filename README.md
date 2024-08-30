@@ -15,12 +15,6 @@ to run the project
 
 + added to the original template
 
-## Project architecture
-
-this project is using components, react query and context api.
-react-query manages the server state,
-the small remaining portion of state to manage is filters
-the filters are managed by context api and persistance in the localstorage.
 
 ### Features
 
@@ -39,6 +33,19 @@ the filters are managed by context api and persistance in the localstorage.
 - loading indicators or ghost placeholder loaders
 - local storage persistance for application state
 - currency and time formatting
+
+## Preview
+
+!["Project preview"](preview/dashboard.png)
+
+## Project architecture
+
+this project is using components, react query and context api.
+react-query manages the server state,
+the small remaining portion of state to manage is filters
+the filters are managed by context api and persistance in the localstorage.
+
+
 
 ### Folder structure
 - componenent (ui components)
