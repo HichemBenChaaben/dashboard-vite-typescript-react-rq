@@ -11,14 +11,12 @@ const AppBar = () => {
     {
       value: "margin",
       icon: "fa-chart-line",
-      label: "Margin",
       isActive: valueType === "margin",
       onClick: () => setValueType("margin"),
     },
     {
       value: "revenue",
       icon: "fa-dollar-sign",
-      label: "revenue",
       isActive: valueType === "revenue",
       onClick: () => setValueType("revenue"),
     },
@@ -27,14 +25,12 @@ const AppBar = () => {
     {
       value: "margin",
       icon: "fas fa-calendar-alt",
-      label: "Margin",
       isActive: period === "monthly",
       onClick: () => setPeriod("monthly"),
     },
     {
       value: "revenue",
       icon: "fas fa-calendar-week",
-      label: "revenue",
       isActive: period === "weekly",
       onClick: () => setPeriod("weekly"),
     },
@@ -51,8 +47,8 @@ const AppBar = () => {
       </div>
 
       <div className="flex gap-2">
-        <ToggleGroup buttons={buttonsGroupConfig} type={valueType} />
-        <ToggleGroup buttons={togglePeriodButtonGroup} type={valueType} />
+        <ToggleGroup buttons={buttonsGroupConfig} />
+        <ToggleGroup buttons={togglePeriodButtonGroup} />
       </div>
     </div>
   );

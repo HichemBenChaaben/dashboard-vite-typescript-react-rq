@@ -50,7 +50,7 @@ const DataTables: FC<Props> = ({
               <small className="text-gray-400">List of best customers</small>
             </div>
             <AggregateInfo
-              title="total revenue aggregate"
+              title={`total ${valueType} aggregate`}
               aggregate={bestCustomersAggregate}
             />
           </div>

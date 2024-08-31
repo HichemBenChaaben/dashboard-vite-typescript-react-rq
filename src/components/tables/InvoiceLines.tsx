@@ -17,7 +17,7 @@ const InvoiceLines: FC<InvoiceLinesProps> = ({ invoice }) => {
   }
   return (
     <div className="max-h-[400px] overflow-scroll">
-      <div className="sticky top-[-10px] flex flex-row gap-2 p-2 bg-gray-50 mb-2 justify-between rounded-sm">
+      <div className="top-[-10px] flex flex-row gap-2 p-2 bg-gray-50 mb-2 justify-between rounded-sm">
         <div className="flex justify-center align-center gap-2">
           <div className="flex flex-col">
             <div className="font-semibold flex flex-row gap-2">
@@ -33,7 +33,7 @@ const InvoiceLines: FC<InvoiceLinesProps> = ({ invoice }) => {
           </div>
         </div>
         <div className="flex flex-col text-blue-800">
-          <div className="flex justify-end items-end font-semibold text-lg">
+          <div className="flex justify-end items-end font-semibold text-md">
             {formatCurrency(invoice.total_invoice)}
           </div>
           <div className="text-sm text-gray-400">

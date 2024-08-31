@@ -1,17 +1,14 @@
 import { type FC } from "react";
-import { type ValueType } from "@/types";
 
 interface ToggleButtonProps {
   value: string;
   icon: string; // FontAwesome icon class
-  label: string;
   isActive: boolean;
   onClick: () => void;
 }
 
 interface Props {
   buttons: ToggleButtonProps[];
-  type: ValueType;
 }
 
 const ToggleButtons: FC<Props> = ({ buttons, ...rest }) => {
@@ -28,7 +25,6 @@ const ToggleButtons: FC<Props> = ({ buttons, ...rest }) => {
           onClick={button.onClick}
         >
           <i className={`fas ${button.icon} text-sm`} />
-          <span className="sr-only">{button.label}</span>
         </button>
       ))}
     </div>
